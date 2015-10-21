@@ -3,16 +3,44 @@ package com.ghost.bouncingball;
 import com.ghost.bouncingball.views.GameView;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.View.OnTouchListener;
 
 public class Game extends Activity {
+
+	private int width, height;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(new GameView(this));
+		GameView game = new GameView(this);
+		setContentView(game);
+		Display display = getWindowManager().getDefaultDisplay();
+		Point size = new Point();
+		display.getSize(size);
+		width = size.x;
+		height = size.y;
+		game.setOnTouchListener(new OnTouchListener() {
+
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				if (event.getAction() == MotionEvent.ACTION_DOWN) {
+					if (event.getX() > width - width / 10 && event.getY() < height / 10) {
+						startActivity(new Intent(Game.this, Menue.class));
+					}else{
+						//TODO Hop him
+					}
+				}
+				return v.performClick();
+			}
+		});
 	}
 
 	@Override

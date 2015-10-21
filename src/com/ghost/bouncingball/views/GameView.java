@@ -49,7 +49,14 @@ public class GameView extends SurfaceView{
 	private void draw(){
 		Canvas canvas = holder.lockCanvas(null);
 		canvas.drawBitmap(Bitmap.createScaledBitmap(Preloader.background, width, height, false), 0, 0, null);
+		canvas.drawBitmap(Bitmap.createScaledBitmap(Preloader.exit, width/10, height/10, false), width-width/10, 0, null);
 		holder.unlockCanvasAndPost(canvas);
+	}
+	
+	@Override
+	public boolean performClick(){
+		//Not used yet
+		return super.performClick();
 	}
 
 }
