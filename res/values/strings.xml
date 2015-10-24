@@ -11,5 +11,7 @@
     <string name="startGame">Start Game</string>
     <string name="highscore">Highscore</string>
     <string name="exit">Exit</string>
+    <string name="title_activity_highscore">Highscore</string>
+    <string name="infoHighscore">Your current highscore is</string>
 
 </resources>

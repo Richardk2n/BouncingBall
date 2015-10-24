@@ -27,13 +27,14 @@ public class Menue extends Activity {
 			@Override
 			public void onClick(View v) {
 				startActivity(new Intent(Menue.this, Game.class));
+				finish();
 			}
 		});
 		((Button) findViewById(R.id.highscore)).setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				//TODO
+				startActivity(new Intent(Menue.this, Highscore.class));
 			}
 		});
 		((Button) findViewById(R.id.exit)).setOnClickListener(new OnClickListener() {
@@ -47,7 +48,6 @@ public class Menue extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.menue, menu);
 		return true;
 	}
 

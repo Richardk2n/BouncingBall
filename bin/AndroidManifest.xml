@@ -27,6 +27,11 @@
             android:label="@string/title_activity_game"
             android:screenOrientation="landscape" >
         </activity>
+        <activity
+            android:name=".Highscore"
+            android:label="@string/title_activity_highscore"
+            android:parentActivityName=".Menue" >
+        </activity>
     </application>
 
 </manifest>

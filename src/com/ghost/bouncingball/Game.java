@@ -34,6 +34,7 @@ public class Game extends Activity {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
 					if (event.getX() > width - width / 10 && event.getY() < height / 10) {
 						startActivity(new Intent(Game.this, Menue.class));
+						finish();
 					}else{
 						v.performClick();
 					}
