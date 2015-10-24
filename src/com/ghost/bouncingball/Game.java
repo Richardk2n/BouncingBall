@@ -35,10 +35,10 @@ public class Game extends Activity {
 					if (event.getX() > width - width / 10 && event.getY() < height / 10) {
 						startActivity(new Intent(Game.this, Menue.class));
 					}else{
-						//TODO Hop him
+						v.performClick();
 					}
 				}
-				return v.performClick();
+				return true;
 			}
 		});
 	}
