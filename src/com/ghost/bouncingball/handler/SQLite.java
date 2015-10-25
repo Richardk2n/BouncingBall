@@ -43,7 +43,7 @@ public class SQLite extends SQLiteOpenHelper {
 		}
 		return null;
 	}
-	
+
 	public void updateMyHighscore(String newHighscore, String oldHighscore) {
 		SQLiteDatabase db = getWritableDatabase();
 
@@ -52,7 +52,7 @@ public class SQLite extends SQLiteOpenHelper {
 
 		db.update(TABLE_NAME_HIGHSCORE, values, new StringBuilder(KEY_HIGHSCORE).append("=?").toString(), new String[] { oldHighscore });
 	}
-	
+
 	public void setUpMyHighscore() {
 		if (getMyHighscore() == null || getMyHighscore().equals("")) {
 			SQLiteDatabase db = getWritableDatabase();
@@ -64,5 +64,5 @@ public class SQLite extends SQLiteOpenHelper {
 			db.insert(TABLE_NAME_HIGHSCORE, null, values);
 		}
 	}
-	
+
 }
