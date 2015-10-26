@@ -51,6 +51,7 @@ public class GameView extends SurfaceView {
 			@Override
 			public void surfaceCreated(SurfaceHolder holder) {
 				tick();
+				timer = new Timer(true);
 				timer.scheduleAtFixedRate(new TimerTask() {
 
 					@Override
@@ -65,7 +66,6 @@ public class GameView extends SurfaceView {
 				// I don't care
 			}
 		});
-		timer = new Timer(true);
 	}
 
 	private void tick() {
@@ -98,6 +98,7 @@ public class GameView extends SurfaceView {
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
 							context.startActivity(new Intent(context, Menue.class));
+							((Activity) context).finish();
 						}
 					}).create().show();
 				}
