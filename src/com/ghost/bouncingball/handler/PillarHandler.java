@@ -62,7 +62,7 @@ public class PillarHandler {
 		if (last > 50) {
 			int random = (int) (Math.random() * (100 / ticksSinceLastPillar));
 			if (random < 1) {
-				int gapTop = (int) (Math.random() * height * 0.7);
+				int gapTop = (int) (Math.random() * height * 0.9);
 				pillars.add(new Pillar(new Point(width - 1, gapTop), new Point((int) (width * 1.05), 0), -10, 0, Preloader.pillar, width, height));
 				pillars.add(new Pillar(new Point(width - 1, height), new Point((int) (width * 1.05), gapTop + (int) (0.1 * height)), -10, 0, Preloader.pillar, width,
 						height));
